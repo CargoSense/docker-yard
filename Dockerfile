@@ -8,7 +8,7 @@ EXPOSE 8808
 
 RUN gem install --no-document \
         webrick:1.9.2 \
-        yard:0.9.37 \
+        yard:0.9.40 \
         && \
     rm -rf "${GEM_HOME}"/cache/*
 
