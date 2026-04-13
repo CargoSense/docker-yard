@@ -1,8 +1,8 @@
 FROM ruby:3.4.9-alpine3.23
 
-RUN apk add --no-cache --update gcc libc-dev make && \
+RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
     gem install --no-document redcarpet webrick yard && \
-    apk del gcc libc-dev make && \
+    apk del .build-deps && \
     rm -rf "${GEM_HOME}"/cache/*
 
 COPY docker-entrypoint.sh /usr/local/bin
