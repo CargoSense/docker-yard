@@ -8,9 +8,9 @@ EXPOSE 8808
 
 RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
     gem install --no-document \
-        redcarpet \
-        webrick \
-        yard \
+        redcarpet:3.6.1 \
+        webrick:1.9.2 \
+        yard:0.9.37 \
         && \
     apk del .build-deps && \
     rm -rf "${GEM_HOME}"/cache/*
