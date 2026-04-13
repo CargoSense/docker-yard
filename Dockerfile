@@ -7,7 +7,11 @@ WORKDIR ${WORKDIR}
 EXPOSE 8808
 
 RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
-    gem install --no-document redcarpet webrick yard && \
+    gem install --no-document \
+        redcarpet \
+        webrick \
+        yard \
+        && \
     apk del .build-deps && \
     rm -rf "${GEM_HOME}"/cache/*
 
