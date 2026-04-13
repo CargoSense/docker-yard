@@ -5,10 +5,6 @@ RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
     apk del .build-deps && \
     rm -rf "${GEM_HOME}"/cache/*
 
-COPY docker-entrypoint.sh /usr/local/bin
-
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
 RUN addgroup -g 1000 -S yard && \
     adduser -G yard -S -u 1000 yard
 
@@ -21,7 +17,5 @@ WORKDIR /app
 VOLUME /app
 
 EXPOSE 8808
-
-ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["yard", "server", "--reload"]
