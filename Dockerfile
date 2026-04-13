@@ -6,13 +6,10 @@ WORKDIR ${WORKDIR}
 
 EXPOSE 8808
 
-RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
-    gem install --no-document \
-        redcarpet:3.6.1 \
+RUN gem install --no-document \
         webrick:1.9.2 \
         yard:0.9.37 \
         && \
-    apk del .build-deps && \
     rm -rf "${GEM_HOME}"/cache/*
 
 RUN addgroup -g 1000 -S yard && \
