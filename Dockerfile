@@ -1,4 +1,4 @@
-FROM ruby:3.4-alpine
+FROM ruby:3.4.9-alpine3.23
 
 RUN apk add --no-cache --update gcc libc-dev make && \
     gem install --no-document redcarpet webrick yard && \
