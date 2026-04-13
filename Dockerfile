@@ -10,7 +10,7 @@ RUN addgroup -g 1000 -S yard && \
 
 USER 1000:1000
 
-COPY config.yml /home/yard/.yard/config
+COPY --chown=yard:yard config.yml /home/yard/.yard/config
 
 WORKDIR /app
 
