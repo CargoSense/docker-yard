@@ -14,9 +14,9 @@ RUN apk add --no-cache --update --virtual .build-deps gcc libc-dev make && \
 RUN addgroup -g 1000 -S yard && \
     adduser -G yard -S -u 1000 yard
 
-USER 1000:1000
-
 COPY --chown=yard:yard config.yml /home/yard/.yard/config
+
+USER 1000:1000
 
 VOLUME ${WORKDIR}
 
