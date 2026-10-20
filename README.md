@@ -10,7 +10,7 @@
 You may run this container directly using the [`docker run`](https://docs.docker.com/engine/containers/run/) command from the root of your project:
 
 ```sh
-docker run --rm -it -p "8808:8808" -v "${PWD}:/app" ghcr.io/cargosense/yard:2.2.0
+docker run --rm -it -p "8808:8808" -v "${PWD}:/app" ghcr.io/cargosense/yard:2.3.0
 ```
 
 Alternatively, configure this container to run as part of a [Docker Compose](https://docs.docker.com/reference/compose-file/)-driven set of services:
@@ -20,7 +20,7 @@ services:
   app:
     # Your application's configuration here.
   yard:
-    image: "ghcr.io/cargosense/yard:2.2.0"
+    image: "ghcr.io/cargosense/yard:2.3.0"
     ports:
       - "8808:8808"
     volumes:
