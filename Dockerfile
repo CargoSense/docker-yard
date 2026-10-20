@@ -7,9 +7,9 @@ WORKDIR ${WORKDIR}
 EXPOSE 8808
 
 RUN gem install --no-document \
-        commonmarker:2.8.0 \
+        commonmarker:2.10.1 \
         webrick:1.9.2 \
-        yard:0.9.40 \
+        yard:0.9.45 \
         && \
     rm -rf "${GEM_HOME}"/cache/*
 
