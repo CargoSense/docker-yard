@@ -7,20 +7,20 @@
 
 ## Usage
 
-You may be run this container directly using the [`docker run`](https://docs.docker.com/engine/containers/run/) command from the root of your project:
+You may run this container directly using the [`docker run`](https://docs.docker.com/engine/containers/run/) command from the root of your project:
 
 ```sh
-docker run --rm -it -p "8808:8808" -v "${PWD}:/app" ghcr.io/cargosense/yard:1.0.0
+docker run --rm -it -p "8808:8808" -v "${PWD}:/app" ghcr.io/cargosense/yard:2.2.0
 ```
 
-Alternatively, you may configure this container to run as part of a [Docker Compose](https://docs.docker.com/reference/compose-file/)-driven set of services:
+Alternatively, configure this container to run as part of a [Docker Compose](https://docs.docker.com/reference/compose-file/)-driven set of services:
 
 ```yaml
 services:
   app:
     # Your application's configuration here.
   yard:
-    image: "ghcr.io/cargosense/yard:1.0.0"
+    image: "ghcr.io/cargosense/yard:2.2.0"
     ports:
       - "8808:8808"
     volumes:
@@ -28,7 +28,7 @@ services:
 ```
 
 > [!TIP]
-> By default, the container runs `yard server` but you may override this by passing a different command. See `yard --help` for available options.
+> By default, the container runs `yard server --reload` but you may override this by passing a different command. See `yard --help` for available options.
 
 ## License
 
